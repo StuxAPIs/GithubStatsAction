@@ -1,4 +1,10 @@
+<p align="center">
+  <img src="https://media.stux.group/global/logo.png" width="300" alt="Stux.Group">
+</p>
+
 # GitHub Readme Stats Action
+
+*Powered by [StuxAPIs](https://github.com/StuxAPIs) — fork of [stats-organization/github-readme-stats-action](https://github.com/stats-organization/github-readme-stats-action), see [License](#license) below.*
 
 Generate [GitHub Readme Stats](https://github.com/stats-organization/github-readme-stats) cards in your GitHub Actions workflow, commit them to your profile repository, and embed them directly from there.
 
@@ -23,7 +29,7 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Generate stats card
-        uses: stats-organization/github-readme-stats-action@v2
+        uses: StuxAPIs/GithubStatsAction@v3.0.0
         with:
           card: stats
           options: username=${{ github.repository_owner }}&show_icons=true
@@ -31,7 +37,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
-        uses: stats-organization/github-readme-stats-action@v2
+        uses: StuxAPIs/GithubStatsAction@v3.0.0
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}&layout=compact&langs_count=6
@@ -39,7 +45,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate pin card
-        uses: stats-organization/github-readme-stats-action@v2
+        uses: StuxAPIs/GithubStatsAction@v3.0.0
         with:
           card: pin
           options: username=stats-organization&repo=github-readme-stats
@@ -141,3 +147,7 @@ with:
 ## Notes
 
 - This action uses the same renderers and fetchers as [github-stats-extended](https://github.com/stats-organization/github-stats-extended).
+
+## License
+
+MIT — see [LICENSE](LICENSE).
