@@ -12,6 +12,11 @@ Started at v3.0.0 rather than v1.0.0 — this fork's git history carries
 upstream's own release tags up through v2.0.2, so anything in the v1.x/v2.x
 range would collide with an existing tag.
 
+## v3.0.4
+
+### Changed
+- `README.md`'s header logo now shows StuxAPIs' own logo (`https://global.media.stuxapis.net/logo.png`) instead of the generic Stux.Group fallback, and the footer "Built & Maintained by StuxAPIs" icon now uses StuxAPIs' own icon instead of the GitHub org avatar — now that StuxAPIs has real branding of its own, more specific than the org-wide Stux.Group fallback
+
 ## v3.0.3
 
 ### Changed
