@@ -12,6 +12,11 @@ Started at v3.0.0 rather than v1.0.0 — this fork's git history carries
 upstream's own release tags up through v2.0.2, so anything in the v1.x/v2.x
 range would collide with an existing tag.
 
+## v3.0.3
+
+### Changed
+- `README.md`'s "Powered by StuxAPIs" line replaced with "Built & Maintained by StuxAPIs, Hosted by Stuxedo" (both linked, to `github.com/StuxAPIs` and `stuxedo.com`), matching the branding used everywhere else in the org
+
 ## v3.0.2
 
 ### Changed

@@ -4,7 +4,7 @@
 
 # GitHub Readme Stats Action
 
-*Powered by [StuxAPIs](https://github.com/StuxAPIs) — fork of [stats-organization/github-readme-stats-action](https://github.com/stats-organization/github-readme-stats-action), see [License](#license) below.*
+*Built & Maintained by [StuxAPIs](https://github.com/StuxAPIs), Hosted by [Stuxedo](https://stuxedo.com) — fork of [stats-organization/github-readme-stats-action](https://github.com/stats-organization/github-readme-stats-action), see [License](#license) below.*
 
 Generate [GitHub Readme Stats](https://github.com/stats-organization/github-readme-stats) cards in your GitHub Actions workflow, commit them to your profile repository, and embed them directly from there.
 
