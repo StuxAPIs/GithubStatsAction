@@ -12,6 +12,11 @@ Started at v3.0.0 rather than v1.0.0 — this fork's git history carries
 upstream's own release tags up through v2.0.2, so anything in the v1.x/v2.x
 range would collide with an existing tag.
 
+## v3.0.5
+
+### Changed
+- `CONTRIBUTING.md`'s general contact address changed from `contact@stuxapis.net` to `hello@stuxapis.net`, matching the convention used across other StuxAPIs repos
+
 ## v3.0.4
 
 ### Changed
