@@ -18,6 +18,12 @@ pnpm install
 
 See the upstream README for how the action is tested and packaged.
 
+## Branches
+
+- Work on `test`, or on a branch off it. Never push to `main`
+- Changes reach `main` only through a pull request from `test` into `main`, which needs CI to pass and is reviewed and merged by Leo
+- Release commits and tags are made on `test` (`git push origin test --tags`) and take effect when the pull request is merged. Workflows pin its tags in `uses:`, so a release is usable once it is merged.
+
 ## Releases
 
 Releases follow [Semantic Versioning](https://semver.org/):

@@ -12,6 +12,14 @@ Started at v3.0.0 rather than v1.0.0 — this fork's git history carries
 upstream's own release tags up through v2.0.2, so anything in the v1.x/v2.x
 range would collide with an existing tag.
 
+## v3.0.8
+
+### Changed
+
+- CI (`.github/workflows/ci.yml`) also runs on pushes to `test`
+- `commit.sh` and `commit.bat` end by saying to push `test` and open a pull request into `main`
+- README (Versioning) and CONTRIBUTING (a new Branches section) describe the `test` branch flow: work and releases happen on `test`, and reach `main` only through a reviewed pull request that needs CI to pass
+
 ## v3.0.7
 
 ### Changed
