@@ -148,6 +148,12 @@ with:
 
 - This action uses the same renderers and fetchers as [github-stats-extended](https://github.com/stats-organization/github-stats-extended).
 
+## Versioning
+
+Releases use [Semantic Versioning](https://semver.org/); see [CHANGELOG.md](CHANGELOG.md) for what changed in each.
+
+Releases are committed and tagged on the `test` branch and reach `main` through a pull request from `test`, which needs CI to pass and is reviewed and merged by Leo; see [Branches](CONTRIBUTING.md#branches).
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
