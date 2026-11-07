@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Generate stats card
-        uses: StuxAPIs/GithubStatsAction@v3.0.0
+        uses: StuxAPIs/GithubStatsAction@v26.11.07
         with:
           card: stats
           options: username=${{ github.repository_owner }}&show_icons=true
@@ -37,7 +37,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
-        uses: StuxAPIs/GithubStatsAction@v3.0.0
+        uses: StuxAPIs/GithubStatsAction@v26.11.07
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}&layout=compact&langs_count=6
@@ -45,7 +45,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate pin card
-        uses: StuxAPIs/GithubStatsAction@v3.0.0
+        uses: StuxAPIs/GithubStatsAction@v26.11.07
         with:
           card: pin
           options: username=stats-organization&repo=github-readme-stats
@@ -150,7 +150,9 @@ with:
 
 ## Versioning
 
-Releases use [Semantic Versioning](https://semver.org/); see [CHANGELOG.md](CHANGELOG.md) for what changed in each.
+Releases use [Date Versioning](https://datevers.ing): each is numbered by its UTC release date as `YY.MM.DD` (for example `26.11.07`), with `-1`, `-2`… for later releases the same day. See [CHANGELOG.md](CHANGELOG.md) for what changed in each.
+
+Pin a release with `@v26.11.07`, follow this year's releases with `@v26`, or keep using `@v3`, which still moves to every new release. Releases up to v3.0.8 used Semantic Versioning.
 
 Releases are committed and tagged on the `test` branch and reach `main` through a pull request from `test`, which needs CI to pass and is reviewed and merged by Leo; see [Branches](CONTRIBUTING.md#branches).
 
