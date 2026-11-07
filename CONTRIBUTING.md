@@ -26,11 +26,14 @@ See the upstream README for how the action is tested and packaged.
 
 ## Releases
 
-Releases follow [Semantic Versioning](https://semver.org/):
+Releases use [Date Versioning](https://datevers.ing) (since v26.11.07; v3.0.0 to v3.0.8 were SemVer, and it never goes back):
 
-1. Update [CHANGELOG.md](CHANGELOG.md) with what changed.
-2. Bump [VERSION.md](VERSION.md).
-3. Run `commit.sh` (or `commit.bat` on Windows) to commit and tag the release.
+1. Add a `## vYY.MM.DD` entry at the top of [CHANGELOG.md](CHANGELOG.md), with its sections in this order: Added, Changed, Fixed, Removed, Security, Deprecated.
+2. Set [VERSION.md](VERSION.md) to the same bare version: today's **UTC** date as `YY.MM.DD`, or `YY.MM.DD-1`, `-2`… for later releases the same UTC day. Never a future date. Set `package.json`'s version to its SemVer form (`26.11.07` → `26.11.0700`, `26.11.07-1` → `26.11.0701`).
+3. Run `bash tests/version.sh`.
+4. Run `commit.sh` (or `commit.bat` on Windows) to commit and tag the release. It never pushes.
+
+When the tag reaches GitHub, `update-tags.yml` moves the floating tags to it: `v3` (kept for workflows that pinned the last SemVer major), the year (`v26`) and the month (`v26.11`).
 
 ## Questions
 

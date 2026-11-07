@@ -62,3 +62,6 @@ jobs:
 
       - name: Lint (knip)
         run: pnpm run lint:knip
+
+      - name: Version (Date Versioning)
+        run: bash tests/version.sh

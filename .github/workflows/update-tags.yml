@@ -1,18 +1,40 @@
 name: Update version tags
+
+# On every Date Version tag push (vYY.MM.DD or vYY.MM.DD-N), moves the floating tags to that release:
+#   v3      kept for workflows that pinned the last Semantic Versioning major (@v3), so they still update
+#   vYY     this year's releases (@v26)
+#   vYY.MM  this month's releases (@v26.11)
 on:
   push:
     branches-ignore:
       - "**"
     tags:
-      - "v*.*.*"
+      - "v[0-9][0-9].[0-9][0-9].[0-9][0-9]"
+      - "v[0-9][0-9].[0-9][0-9].[0-9][0-9]-*"
 
 permissions: {}
 
 jobs:
-  update-semver:
+  update-tags:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: haya14busa/action-update-semver@7d2c558640ea49e798d46539536190aff8c18715 # v1.5.1
+      - name: Move the floating tags
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          if ! [[ "$TAG" =~ ^v([0-9]{2})\.([0-9]{2})\.([0-9]{2})(-[1-9][0-9]*)?$ ]]; then
+            echo "$TAG isn't a Date Version tag; nothing to move."
+            exit 0
+          fi
+          year="v${BASH_REMATCH[1]}"
+          month="v${BASH_REMATCH[1]}.${BASH_REMATCH[2]}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for t in v3 "$year" "$month"; do
+            git tag -fa "$t" -m "$t -> $TAG" "$GITHUB_SHA"
+            git push -f origin "refs/tags/$t"
+            echo "Moved $t to $TAG"
+          done

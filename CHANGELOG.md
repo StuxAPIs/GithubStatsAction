@@ -5,12 +5,21 @@ are documented here, tracking this fork independently of upstream's own
 release history. For upstream history, see
 [stats-organization/github-readme-stats-action](https://github.com/stats-organization/github-readme-stats-action).
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+Since v26.11.07 this project uses [Date Versioning](https://datevers.ing) (`YY.MM.DD`, the UTC release
+date, with `-1`, `-2`… for later releases the same day). v3.0.0 to v3.0.8 used Semantic Versioning (they
+started at v3.0.0 because this fork's history carries upstream's own tags up to v2.0.2). The `v3` tag still
+follows the latest release, so workflows using `@v3` keep getting updates.
 
-Started at v3.0.0 rather than v1.0.0 — this fork's git history carries
-upstream's own release tags up through v2.0.2, so anything in the v1.x/v2.x
-range would collide with an existing tag.
+## v26.11.07
+
+### Changed
+
+- **Date Versioning.** This is the first release numbered by its UTC release date (`YY.MM.DD`, then `-1`, `-2`… the same day) instead of Semantic Versioning, and every release after it is too. Date Versions sort above every `v3.x.y` tag
+- Nothing changes for workflows: `@v3` still moves to every new release, as before. Each release also moves `v26` (the year) and `v26.11` (the month), so `@v26` follows this year's releases, and `@v26.11.07` pins this one
+- `.github/workflows/update-tags.yml` moves those tags itself on every Date Version tag push, instead of `haya14busa/action-update-semver` (which only understands SemVer)
+- `commit.sh` and `commit.bat` accept only a real, non-future Date Version, and `tests/version.sh` (run in CI) checks `VERSION.md` and the changelog
+- README examples pin `@v26.11.07`, and the README, CONTRIBUTING and this intro describe Date Versioning
+- `package.json`'s version is the Date Version's SemVer form (`26.11.0700`)
 
 ## v3.0.8
 
