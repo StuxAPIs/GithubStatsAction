@@ -10,6 +10,12 @@ date, with `-1`, `-2`… for later releases the same day). v3.0.0 to v3.0.8 used
 started at v3.0.0 because this fork's history carries upstream's own tags up to v2.0.2). The `v3` tag still
 follows the latest release, so workflows using `@v3` keep getting updates.
 
+## v26.11.15
+
+### Changed
+
+- Releases now go live in two steps, each through a pull request: `test` into `staging`, then `staging` into `main`. `staging` is a new branch made from `main`, and nothing is pushed to `staging` or `main` directly. `commit.sh` / `commit.bat` refuse to run on `staging` or `main`, and print the push command and both `gh pr create` commands. CI also runs on `staging`. CONTRIBUTING's "Branches and going live" section and the README describe it
+
 ## v26.11.07
 
 ### Changed

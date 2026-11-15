@@ -154,7 +154,7 @@ Releases use [Date Versioning](https://datevers.ing): each is numbered by its UT
 
 Pin a release with `@v26.11.07`, follow this year's releases with `@v26`, or keep using `@v3`, which still moves to every new release. Releases up to v3.0.8 used Semantic Versioning.
 
-Releases are committed and tagged on the `test` branch and reach `main` through a pull request from `test`, which needs CI to pass and is reviewed and merged by Leo; see [Branches](CONTRIBUTING.md#branches).
+Releases are committed and tagged on the `test` branch, then go live through two pull requests: `test` into `staging`, then `staging` into `main`. Each needs CI to pass and is reviewed and merged by Leo; see [Branches and going live](CONTRIBUTING.md#branches-and-going-live).
 
 ## License
 
